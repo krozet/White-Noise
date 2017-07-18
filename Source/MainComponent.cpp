@@ -20,7 +20,12 @@ public:
     MainContentComponent()
     {
         setSize (800, 600);
+		levelSlider.setRange(0.0, 1.0, 0.01);
+		levelSlider.setTextBoxStyle(Slider::TextBoxRight, false, 100, 20);
+		levelLabel.setText("Noise Level", dontSendNotification);
 
+		addAndMakeVisible(levelSlider);
+		addAndMakeVisible(levelLabel);
         // specify the number of input and output channels that we want to open
         setAudioChannels (0, 2);
     }
@@ -50,20 +55,18 @@ public:
 
 	void getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) override
 	{
-		// Your audio-processing code goes here!
-
-		// For more details, see the help for AudioProcessor::getNextAudioBlock()
+		const float level = (float) levelSlider.getValue();
+		const float levelScale = level * 2.0f;
 
 		for (int channel = 0; channel < bufferToFill.buffer->getNumChannels(); ++channel)
 		{
 			//pointer to start sample in buffer
 			float* const buffer = bufferToFill.buffer->getWritePointer(channel, bufferToFill.startSample);
 
-			//generates a random number betwenn -1 and 1
-			Random random;
+			//generates a random number between -1 and 1
 			for (int sample = 0; sample < bufferToFill.numSamples; ++sample)
 			{
-				buffer[sample] = (random.nextFloat() * 2.0f) - 1.0f;
+				buffer[sample] = (random.nextFloat() * levelScale) - level;
 			}
 		}
 		///TODO Look up clearactivebufferregion and determine if it's needed or not
@@ -94,14 +97,16 @@ public:
         // This is called when the MainContentComponent is resized.
         // If you add any child components, this is where you should
         // update their positions.
+		levelLabel.setBounds(10, 10, 90, 20);
+		levelSlider.setBounds(100, 10, getWidth() - 110, 20);
     }
 
 
 private:
     //==============================================================================
-
-    // Your private member variables go here...
-
+	Random random;
+	Slider levelSlider;
+	Label levelLabel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };
