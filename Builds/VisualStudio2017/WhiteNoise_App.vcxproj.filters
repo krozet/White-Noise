@@ -2,11 +2,11 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="NewProject\Source">
-      <UniqueIdentifier>{CBA2DCCD-1D2C-5CB2-5048-C7D8353D0443}</UniqueIdentifier>
+    <Filter Include="WhiteNoise\Source">
+      <UniqueIdentifier>{535E0634-9B28-2902-17D4-2123F8F64468}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NewProject">
-      <UniqueIdentifier>{CB74BE48-DB7F-3C97-627C-DABC57896C4C}</UniqueIdentifier>
+    <Filter Include="WhiteNoise">
+      <UniqueIdentifier>{181EAEEA-D7B4-8796-30EC-D128932D1F35}</UniqueIdentifier>
     </Filter>
     <Filter Include="Juce Modules\juce_audio_basics\audio_play_head">
       <UniqueIdentifier>{52045BA8-DF89-5074-688D-A0977F25B09C}</UniqueIdentifier>
@@ -371,10 +371,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
-      <Filter>NewProject\Source</Filter>
+      <Filter>WhiteNoise\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
-      <Filter>NewProject\Source</Filter>
+      <Filter>WhiteNoise\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <Filter>Juce Modules\juce_audio_basics\buffers</Filter>

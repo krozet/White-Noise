@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="U2T5gQ" name="NewProject" displaySplashScreen="1" reportAppUsage="1"
+<JUCERPROJECT id="e7Ko3d" name="WhiteNoise" displaySplashScreen="1" reportAppUsage="1"
               splashScreenColour="Dark" projectType="guiapp" version="1.0.0"
-              bundleIdentifier="com.yourcompany.NewProject" includeBinaryInAppConfig="1"
+              bundleIdentifier="com.yourcompany.WhiteNoise" includeBinaryInAppConfig="1"
               jucerVersion="5.0.2">
-  <MAINGROUP id="Uetqqb" name="NewProject">
-    <GROUP id="{964E3D68-FBB1-B30C-02D8-D14B59C50DB2}" name="Source">
-      <FILE id="FU61in" name="MainComponent.cpp" compile="1" resource="0"
+  <MAINGROUP id="DLMmAC" name="WhiteNoise">
+    <GROUP id="{C8BC4638-EEC9-3FB3-F80C-0E9DF955F84C}" name="Source">
+      <FILE id="g1SIgm" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="P4wgg4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="GZ86sw" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
     <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="NewProject"/>
+                       isDebug="1" optimisation="1" targetName="WhiteNoise"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="NewProject"/>
+                       isDebug="0" optimisation="3" targetName="WhiteNoise"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
@@ -39,9 +39,9 @@
     <VS2015 targetFolder="Builds/VisualStudio2015">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="NewProject"/>
+                       isDebug="1" optimisation="1" targetName="WhiteNoise"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="NewProject"/>
+                       isDebug="0" optimisation="3" targetName="WhiteNoise"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../JUCE/modules"/>

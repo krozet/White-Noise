@@ -31,29 +31,29 @@ public:
     }
 
     //==============================================================================
-    void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override
-    {
-        // This function will be called when the audio device is started, or when
-        // its settings (i.e. sample rate, block size, etc) are changed.
+	void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override
+	{
+		// This function will be called when the audio device is started, or when
+		// its settings (i.e. sample rate, block size, etc) are changed.
 
-        // You can use this function to initialise any resources you might need,
-        // but be careful - it will be called on the audio thread, not the GUI thread.
+		// You can use this function to initialise any resources you might need,
+		// but be careful - it will be called on the audio thread, not the GUI thread.
 
-        // For more details, see the help for AudioProcessor::prepareToPlay()
+		// For more details, see the help for AudioProcessor::prepareToPlay()
 
 		String message;
 		message << "Preparing to play audio..." << newLine;
 		message << " samplesPerBlockExpected = " << samplesPerBlockExpected << newLine;
 		message << " sampleRate = " << sampleRate;
 		Logger::getCurrentLogger()->writeToLog(message);
-    }
+	}
 
-    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
-    {
-        // Your audio-processing code goes here!
+	void getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) override
+	{
+		// Your audio-processing code goes here!
 
-        // For more details, see the help for AudioProcessor::getNextAudioBlock()
-		
+		// For more details, see the help for AudioProcessor::getNextAudioBlock()
+
 		for (int channel = 0; channel < bufferToFill.buffer->getNumChannels(); ++channel)
 		{
 			//pointer to start sample in buffer
@@ -63,21 +63,21 @@ public:
 			Random random;
 			for (int sample = 0; sample < bufferToFill.numSamples; ++sample)
 			{
-				buffer[sample] = (random.nextFloat() * 2.0f) - 1.0f; 
+				buffer[sample] = (random.nextFloat() * 2.0f) - 1.0f;
 			}
 		}
 		///TODO Look up clearactivebufferregion and determine if it's needed or not
-			// Right now we are not producing any data, in which case we need to clear the buffer
-			// (to prevent the output of random noise)
-			//bufferToFill.clearActiveBufferRegion();
-    }
+		// Right now we are not producing any data, in which case we need to clear the buffer
+		// (to prevent the output of random noise)
+		//bufferToFill.clearActiveBufferRegion();
+	}
 
     void releaseResources() override
     {
         // This will be called when the audio device stops, or when it is being
         // restarted due to a setting change.
 
-		Logger::getCurrentLogger()->writeToLog("Releasing audio resources");
+        // For more details, see the help for AudioProcessor::releaseResources()
     }
 
     //==============================================================================
